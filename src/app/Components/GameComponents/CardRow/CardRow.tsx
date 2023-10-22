@@ -1,18 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import CardContainer from "../CardContainer/CardContainer";
+import { ICardRowProps } from "../../types/interfaces";
 
-interface CardRowProps {
-  color: string;
-}
-
-const CardRow = ({ color }: CardRowProps): React.JSX.Element => {
+const CardRow = ({ color, cards }: ICardRowProps): React.JSX.Element => {
   return (
     <Container color={color}>
-      <CardContainer />
-      <CardContainer />
-      <CardContainer />
-      <CardContainer />
+      {cards.map((card, i) => {
+        console.log("---------------------");
+        console.log("Card ", i, ": ", card);
+        return <CardContainer key={i} card={card} />;
+      })}
       <CardContainer color="white" />
     </Container>
   );

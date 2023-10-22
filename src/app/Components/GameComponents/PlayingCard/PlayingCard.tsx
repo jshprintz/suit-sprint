@@ -30,11 +30,13 @@ class PlayingCard extends Component<PlayingCardProps, PlayingCardState> {
     const { Rank, Suit, Flipped, Hidden } = this.state;
 
     return (
-      <Container hidden={Hidden}>
-        <Card>
-          <span>{Rank}</span>
-          <span>{Suit}</span>
-        </Card>
+      <Container>
+        {Hidden && (
+          <Card>
+            <span>{Rank}</span>
+            <span>{Suit}</span>
+          </Card>
+        )}
       </Container>
     );
   }
@@ -55,8 +57,8 @@ const Card = styled.div`
   background-color: white;
 `;
 
-const Container = styled.div<{ hidden: boolean }>`
-  display: ${(p) => (p.hidden ? "none" : "flex")};
+const Container = styled.div`
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
