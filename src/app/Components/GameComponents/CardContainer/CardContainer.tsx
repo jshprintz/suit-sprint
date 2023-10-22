@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PlayingCard from "../PlayingCard/PlayingCard";
+import PlayingCard from "../CardDisplay/CardDisplay";
 import { ICardProps } from "../../types/interfaces";
 
 interface CardContainerProps {

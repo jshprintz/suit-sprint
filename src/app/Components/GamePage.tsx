@@ -40,6 +40,8 @@ const AceClubs: ICardProps = {
   hidden: true,
 };
 
+
+
 const GamePage: React.FC = () => {
   const cardRow: ICardProps[] = [AceHearts, AceDiamonds, AceSpades, AceClubs];
   const gameBoard = [cardRow, cardRow, cardRow, cardRow, cardRow, cardRow];
@@ -51,9 +53,6 @@ const GamePage: React.FC = () => {
       </Winner>
       <CardRowContainer>
         {gameBoard.map((row, index) => {
-          console.log("---------------------")
-          console.log("Row ", index, ": ", row);
-
           return <CardRow key={index} color={BlockColor[index]} cards={row} />;
         })}
       </CardRowContainer>

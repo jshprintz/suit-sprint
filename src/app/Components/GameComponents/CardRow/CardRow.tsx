@@ -7,8 +7,6 @@ const CardRow = ({ color, cards }: ICardRowProps): React.JSX.Element => {
   return (
     <Container color={color}>
       {cards.map((card, i) => {
-        console.log("---------------------");
-        console.log("Card ", i, ": ", card);
         return <CardContainer key={i} card={card} />;
       })}
       <CardContainer color="white" />
