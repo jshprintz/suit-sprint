@@ -11,7 +11,13 @@ import {
 } from "./objects/gameObjects";
 
 const GamePage: React.FC = () => {
-  const cardRow: ICardProps[] = [AceHearts, AceDiamonds, AceSpades, AceClubs];
+
+  const cardRow: ICardProps[] = [
+    AceHearts,
+    AceDiamonds,
+    AceSpades,
+    AceClubs,
+  ];
   const gameBoard = [cardRow, cardRow, cardRow, cardRow, cardRow, cardRow];
 
   return (
@@ -22,7 +28,14 @@ const GamePage: React.FC = () => {
       <CardRowContainer>
         {gameBoard.map((cards, index) => {
           const rowNum: number = gameBoard.length - index - 1;
-          return <CardRow key={index} color={BlockColor[rowNum]} rowNum={rowNum} cards={cards} />;
+          return (
+            <CardRow
+              key={index}
+              color={BlockColor[rowNum]}
+              rowNum={rowNum}
+              cards={cards}
+            />
+          );
         })}
       </CardRowContainer>
     </Container>

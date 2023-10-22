@@ -2,7 +2,7 @@ interface ICardProps {
   rank: string;
   suit: string;
   flipped: boolean;
-  hidden: boolean;
+  hidden?: boolean;
   row: number;
 }
 

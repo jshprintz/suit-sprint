@@ -19,6 +19,7 @@ const CardContainer = ({
   const hidden: boolean = card?.hidden || false;
   const flipped: boolean = card?.flipped || false;
   const row: number = card?.row || 0;
+  // If the card is not in the current row, hide it
   const isHidden: boolean = row !== rowNum || rank === "";
 
   return (

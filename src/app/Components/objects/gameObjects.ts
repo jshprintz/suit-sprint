@@ -41,4 +41,50 @@ const AceClubs: ICardProps = {
   row: 0,
 };
 
-export { AceClubs, AceDiamonds, AceHearts, AceSpades, BlockColor };
+const RowOne: ICardProps = {
+  rank: "K",
+  suit: "Hearts",
+  flipped: true,
+  row: 1,
+};
+
+const RowTwo: ICardProps = {
+  rank: "Q",
+  suit: "Hearts",
+  flipped: true,
+  row: 2,
+};
+
+const RowThree: ICardProps = {
+  rank: "J",
+  suit: "Hearts",
+  flipped: true,
+  row: 3,
+};
+
+const RowFour: ICardProps = {
+  rank: "10",
+  suit: "Hearts",
+  flipped: true,
+  row: 4,
+};
+
+const RowFive: ICardProps = {
+  rank: "9",
+  suit: "Hearts",
+  flipped: true,
+  row: 5,
+};
+
+export {
+  AceClubs,
+  AceDiamonds,
+  AceHearts,
+  AceSpades,
+  BlockColor,
+  RowOne,
+  RowTwo,
+  RowThree,
+  RowFour,
+  RowFive,
+};
