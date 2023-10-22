@@ -3,13 +3,19 @@ import styled from "styled-components";
 import CardContainer from "../CardContainer/CardContainer";
 import { ICardRowProps } from "../../types/interfaces";
 
-const CardRow = ({ color, cards }: ICardRowProps): React.JSX.Element => {
+const CardRow = ({
+  color,
+  cards,
+  rowNum,
+}: ICardRowProps): React.JSX.Element => {
   return (
     <Container color={color}>
       {cards.map((card, i) => {
-        return <CardContainer key={i} card={card} />;
+        
+
+        return <CardContainer key={i} card={card} rowNum={rowNum} />;
       })}
-      <CardContainer color="white" />
+      <CardContainer color="white" rowNum={rowNum} />
     </Container>
   );
 };

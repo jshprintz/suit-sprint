@@ -1,12 +1,12 @@
 import { IBlockColorProps, ICardProps } from "../types/interfaces";
 
 const BlockColor: IBlockColorProps = {
-  5: "#ffffff",
-  4: "#cfdde1",
-  3: "#b1cfcb",
-  2: "#9ec7b3",
-  1: "#85cca7",
-  0: "#6bd199",
+  0: "#ffffff",
+  1: "#cfdde1",
+  2: "#b1cfcb",
+  3: "#9ec7b3",
+  4: "#85cca7",
+  5: "#6bd199",
 };
 
 const AceHearts: ICardProps = {
@@ -14,6 +14,7 @@ const AceHearts: ICardProps = {
   suit: "Hearts",
   flipped: false,
   hidden: true,
+  row: 0,
 };
 
 const AceDiamonds: ICardProps = {
@@ -21,6 +22,7 @@ const AceDiamonds: ICardProps = {
   suit: "Diamonds",
   flipped: false,
   hidden: true,
+  row: 0,
 };
 
 const AceSpades: ICardProps = {
@@ -28,6 +30,7 @@ const AceSpades: ICardProps = {
   suit: "Spades",
   flipped: false,
   hidden: true,
+  row: 0,
 };
 
 const AceClubs: ICardProps = {
@@ -35,7 +38,7 @@ const AceClubs: ICardProps = {
   suit: "Clubs",
   flipped: false,
   hidden: true,
+  row: 0,
 };
 
-
-export {AceClubs, AceDiamonds, AceHearts, AceSpades, BlockColor};
+export { AceClubs, AceDiamonds, AceHearts, AceSpades, BlockColor };

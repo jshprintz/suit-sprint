@@ -2,7 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import CardRow from "./GameComponents/CardRow/CardRow";
 import { ICardProps } from "./types/interfaces";
-import { AceHearts, AceDiamonds, AceSpades, AceClubs, BlockColor } from "./objects/gameObjects";
+import {
+  AceHearts,
+  AceDiamonds,
+  AceSpades,
+  AceClubs,
+  BlockColor,
+} from "./objects/gameObjects";
 
 const GamePage: React.FC = () => {
   const cardRow: ICardProps[] = [AceHearts, AceDiamonds, AceSpades, AceClubs];
@@ -14,8 +20,9 @@ const GamePage: React.FC = () => {
         <h1>Winner</h1>
       </Winner>
       <CardRowContainer>
-        {gameBoard.map((row, index) => {
-          return <CardRow key={index} color={BlockColor[index]} cards={row} />;
+        {gameBoard.map((cards, index) => {
+          const rowNum: number = gameBoard.length - index - 1;
+          return <CardRow key={index} color={BlockColor[rowNum]} rowNum={rowNum} cards={cards} />;
         })}
       </CardRowContainer>
     </Container>

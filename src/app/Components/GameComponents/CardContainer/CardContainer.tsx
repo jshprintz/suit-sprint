@@ -1,32 +1,43 @@
 import React from "react";
 import styled from "styled-components";
-import PlayingCard from "../CardDisplay/CardDisplay";
+import CardDisplay from "../CardDisplay/CardDisplay";
 import { ICardProps } from "../../types/interfaces";
 
 interface CardContainerProps {
   color?: string;
   card?: ICardProps;
+  rowNum: number;
 }
 
 const CardContainer = ({
   color,
   card,
+  rowNum,
 }: CardContainerProps): React.JSX.Element => {
   const rank: string = card?.rank || "";
   const suit: string = card?.suit || "";
   const hidden: boolean = card?.hidden || false;
   const flipped: boolean = card?.flipped || false;
+  const row: number = card?.row || 0;
+  const isHidden: boolean = row !== rowNum || rank === "";
 
   return (
     <Container color={color}>
-      <PlayingCard rank={rank} suit={suit} flipped={flipped} hidden={hidden} />
+      {!isHidden && (
+        <CardDisplay
+          rank={rank}
+          suit={suit}
+          flipped={flipped}
+          hidden={hidden}
+        />
+      )}
     </Container>
   );
 };
 
 const Container = styled.div<{ color?: string }>`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 

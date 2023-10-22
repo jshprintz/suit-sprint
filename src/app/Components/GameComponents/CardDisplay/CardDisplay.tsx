@@ -13,12 +13,10 @@ const CardDisplay = (props: CardDisplayProps): React.JSX.Element => {
 
   return (
     <Container>
-      {hidden && (
-        <Card>
-          <span>{rank}</span>
-          <span>{suit}</span>
-        </Card>
-      )}
+      <Card>
+        <span>{rank}</span>
+        <span>{suit}</span>
+      </Card>
     </Container>
   );
 };
