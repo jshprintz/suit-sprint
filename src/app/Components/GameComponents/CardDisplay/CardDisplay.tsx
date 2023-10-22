@@ -10,18 +10,49 @@ interface CardDisplayProps {
 
 const CardDisplay = (props: CardDisplayProps): React.JSX.Element => {
   const { rank, suit, flipped, hidden } = props;
+  // Spades = ♠
+  // Hearts = ♥
+  // Diamonds = ♦
+  // Clubs = ♣
+
+  const getSuit = (suit: string): string => {
+    switch (suit) {
+      case "Spades":
+        return "♠";
+      case "Hearts":
+        return "♥";
+      case "Diamonds":
+        return "♦";
+      case "Clubs":
+        return "♣";
+      default:
+        return "";
+    }
+  };
+
+  const suitIcon = getSuit(suit);
+  const color: string = suit === "Spades" || suit === "Clubs" ? "black" : "red";
 
   return (
     <Container>
-      <Card>
-        <span>{rank}</span>
-        <span>{suit}</span>
+      <Card color={color}>
+        <CardContent style={{ transform: "translateY(5px)" }}>
+          {rank}
+        </CardContent>
+        <CardContent style={{ transform: "translateY(-5px)" }}>
+          {suitIcon}
+        </CardContent>
       </Card>
     </Container>
   );
 };
 
-const Card = styled.div`
+const CardContent = styled.span`
+  margin: 0;
+  padding: 0;
+`;
+
+const Card = styled.div<{ color: string }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,6 +63,9 @@ const Card = styled.div`
 
   height: 80%;
   width: 50%;
+
+  color: ${(p) => p.color};
+  font-size: 2rem;
 
   background-color: white;
 `;
