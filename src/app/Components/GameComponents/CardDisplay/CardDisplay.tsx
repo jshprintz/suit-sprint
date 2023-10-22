@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 interface CardDisplayProps {
   rank: string;
@@ -14,6 +15,10 @@ const CardDisplay = (props: CardDisplayProps): React.JSX.Element => {
   // Hearts = ♥
   // Diamonds = ♦
   // Clubs = ♣
+
+  const cardBack = (
+    <Image src="/cardBack.png" alt="card back" width={100} height={150} />
+  );
 
   const getSuit = (suit: string): string => {
     switch (suit) {
@@ -36,12 +41,23 @@ const CardDisplay = (props: CardDisplayProps): React.JSX.Element => {
   return (
     <Container>
       <Card color={color}>
-        <CardContent style={{ transform: "translateY(5px)" }}>
-          {rank}
-        </CardContent>
-        <CardContent style={{ transform: "translateY(-5px)" }}>
-          {suitIcon}
-        </CardContent>
+        {flipped ? (
+          <Image
+            src="/assets/images/cardBack.png"
+            alt="card back"
+            width={70}
+            height={80}
+          />
+        ) : (
+          <>
+            <CardContent style={{ transform: "translateY(5px)" }}>
+              {rank}
+            </CardContent>
+            <CardContent style={{ transform: "translateY(-5px)" }}>
+              {suitIcon}
+            </CardContent>
+          </>
+        )}
       </Card>
     </Container>
   );

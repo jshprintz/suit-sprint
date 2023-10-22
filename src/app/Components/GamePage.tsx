@@ -11,13 +11,7 @@ import {
 } from "./objects/gameObjects";
 
 const GamePage: React.FC = () => {
-
-  const cardRow: ICardProps[] = [
-    AceHearts,
-    AceDiamonds,
-    AceSpades,
-    AceClubs,
-  ];
+  const cardRow: ICardProps[] = [AceHearts, AceSpades, AceDiamonds, AceClubs];
   const gameBoard = [cardRow, cardRow, cardRow, cardRow, cardRow, cardRow];
 
   return (
