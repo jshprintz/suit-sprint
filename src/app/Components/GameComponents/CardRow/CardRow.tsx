@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CardContainer from "../CardContainer/CardContainer";
 
 interface CardRowProps {
   color: string;
@@ -12,24 +13,10 @@ const CardRow = ({ color }: CardRowProps): React.JSX.Element => {
       <CardContainer />
       <CardContainer />
       <CardContainer />
-      <CardContainer color="white"/>
+      <CardContainer color="white" />
     </Container>
   );
 };
-
-const CardContainer = styled.div<{ color?: string }>`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  border: 2px solid black;
-
-  height: 100%;
-  width: 20%;
-
-  background-color: ${(p) => p.color || "transparent"};
-`;
 
 const Container = styled.div<{ color: string }>`
   display: flex;
