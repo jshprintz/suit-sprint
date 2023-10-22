@@ -1,46 +1,20 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { ICardDisplayProps } from "../../types/interfaces";
 
-interface CardDisplayProps {
-  rank: string;
-  suit: string;
-  flipped: boolean;
-  hidden: boolean;
-}
-
-const CardDisplay = (props: CardDisplayProps): React.JSX.Element => {
-  const { rank, suit, flipped, hidden } = props;
+const CardDisplay = (props: ICardDisplayProps): React.JSX.Element => {
+  const { rank, suit, flipped } = props;
   // Spades = ♠
   // Hearts = ♥
   // Diamonds = ♦
   // Clubs = ♣
-
-  const cardBack = (
-    <Image src="/cardBack.png" alt="card back" width={100} height={150} />
-  );
-
-  const getSuit = (suit: string): string => {
-    switch (suit) {
-      case "Spades":
-        return "♠";
-      case "Hearts":
-        return "♥";
-      case "Diamonds":
-        return "♦";
-      case "Clubs":
-        return "♣";
-      default:
-        return "";
-    }
-  };
-
-  const suitIcon = getSuit(suit);
-  const color: string = suit === "Spades" || suit === "Clubs" ? "black" : "red";
+  const color: string = suit === "♣" || suit === "♠" ? "black" : "red";
 
   return (
     <Container>
       <Card color={color}>
+        {/* Show back of the card */}
         {flipped ? (
           <Image
             src="/assets/images/cardBack.png"
@@ -49,12 +23,13 @@ const CardDisplay = (props: CardDisplayProps): React.JSX.Element => {
             height={80}
           />
         ) : (
+          // Show front of the card
           <>
             <CardContent style={{ transform: "translateY(5px)" }}>
               {rank}
             </CardContent>
             <CardContent style={{ transform: "translateY(-5px)" }}>
-              {suitIcon}
+              {suit}
             </CardContent>
           </>
         )}

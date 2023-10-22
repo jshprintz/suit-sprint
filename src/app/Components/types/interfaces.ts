@@ -2,7 +2,6 @@ interface ICardProps {
   rank: string;
   suit: string;
   flipped: boolean;
-  hidden?: boolean;
   row: number;
 }
 
@@ -13,7 +12,25 @@ interface IBlockColorProps {
 interface ICardRowProps {
   color: string;
   cards: ICardProps[];
-  rowNum: number
+  rowNum: number;
 }
 
-export type { ICardProps, IBlockColorProps, ICardRowProps };
+interface ICardContainerProps {
+  color?: string;
+  card?: ICardProps;
+  rowNum: number;
+}
+
+interface ICardDisplayProps {
+  rank: string;
+  suit: string;
+  flipped: boolean;
+}
+
+export type {
+  ICardProps,
+  IBlockColorProps,
+  ICardRowProps,
+  ICardContainerProps,
+  ICardDisplayProps,
+};

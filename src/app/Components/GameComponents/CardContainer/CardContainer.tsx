@@ -1,22 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import CardDisplay from "../CardDisplay/CardDisplay";
-import { ICardProps } from "../../types/interfaces";
-
-interface CardContainerProps {
-  color?: string;
-  card?: ICardProps;
-  rowNum: number;
-}
+import { ICardContainerProps } from "../../types/interfaces";
 
 const CardContainer = ({
   color,
   card,
   rowNum,
-}: CardContainerProps): React.JSX.Element => {
+}: ICardContainerProps): React.JSX.Element => {
   const rank: string = card?.rank || "";
   const suit: string = card?.suit || "";
-  const hidden: boolean = card?.hidden || false;
   const flipped: boolean = card?.flipped || false;
   const row: number = card?.row || 0;
   // If the card is not in the current row, hide it
@@ -24,14 +17,7 @@ const CardContainer = ({
 
   return (
     <Container color={color}>
-      {!isHidden && (
-        <CardDisplay
-          rank={rank}
-          suit={suit}
-          flipped={flipped}
-          hidden={hidden}
-        />
-      )}
+      {!isHidden && <CardDisplay rank={rank} suit={suit} flipped={flipped} />}
     </Container>
   );
 };

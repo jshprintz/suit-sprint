@@ -11,67 +11,63 @@ const BlockColor: IBlockColorProps = {
 
 const AceHearts: ICardProps = {
   rank: "A",
-  suit: "Hearts",
+  suit: "♥",
   flipped: false,
-  hidden: true,
   row: 0,
 };
 
 const AceDiamonds: ICardProps = {
   rank: "A",
-  suit: "Diamonds",
+  suit: "♦",
   flipped: false,
-  hidden: true,
   row: 0,
 };
 
 const AceSpades: ICardProps = {
   rank: "A",
-  suit: "Spades",
+  suit: "♠",
   flipped: false,
-  hidden: true,
   row: 0,
 };
 
 const AceClubs: ICardProps = {
   rank: "A",
-  suit: "Clubs",
+  suit: "♣",
   flipped: false,
-  hidden: true,
   row: 0,
 };
 
 const RowOne: ICardProps = {
   rank: "K",
-  suit: "Hearts",
+  suit: "♥",
   flipped: true,
   row: 1,
 };
 
 const RowTwo: ICardProps = {
   rank: "Q",
-  suit: "Hearts",
+  suit: "♥",
   flipped: true,
   row: 2,
 };
 
 const RowThree: ICardProps = {
   rank: "J",
-  suit: "Hearts",
+  suit: "♥",
   flipped: true,
   row: 3,
 };
 
 const RowFour: ICardProps = {
   rank: "10",
-  suit: "Hearts",
+  suit: "♥",
   flipped: true,
   row: 4,
 };
 
 const RowFive: ICardProps = {
   rank: "9",
-  suit: "Hearts",
+  suit: "♥",
   flipped: true,
   row: 5,
 };
