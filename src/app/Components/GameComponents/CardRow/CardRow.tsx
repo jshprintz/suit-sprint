@@ -2,18 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import CardContainer from "../CardContainer/CardContainer";
 import { ICardRowProps } from "../../types/interfaces";
-import {
-  RowFive,
-  RowFour,
-  RowOne,
-  RowThree,
-  RowTwo,
-} from "../../objects/gameObjects";
 
 const CardRow = ({
   color,
   cards,
   rowNum,
+  speedBump,
 }: ICardRowProps): React.JSX.Element => {
   return (
     <Container color={color}>
@@ -27,23 +21,23 @@ const CardRow = ({
       {rowNum === 0 && <CardContainer color="white" rowNum={rowNum} />}
       {/* Row One */}
       {rowNum === 1 && (
-        <CardContainer color="white" card={RowOne} rowNum={rowNum} />
+        <CardContainer color="white" card={speedBump[1]} rowNum={rowNum} />
       )}
       {/* Row Two */}
       {rowNum === 2 && (
-        <CardContainer color="white" card={RowTwo} rowNum={rowNum} />
+        <CardContainer color="white" card={speedBump[2]} rowNum={rowNum} />
       )}
       {/* Row Three */}
       {rowNum === 3 && (
-        <CardContainer color="white" card={RowThree} rowNum={rowNum} />
+        <CardContainer color="white" card={speedBump[3]} rowNum={rowNum} />
       )}
       {/* Row Four */}
       {rowNum === 4 && (
-        <CardContainer color="white" card={RowFour} rowNum={rowNum} />
+        <CardContainer color="white" card={speedBump[4]} rowNum={rowNum} />
       )}
       {/* Row Five */}
       {rowNum === 5 && (
-        <CardContainer color="white" card={RowFive} rowNum={rowNum} />
+        <CardContainer color="white" card={speedBump[5]} rowNum={rowNum} />
       )}
     </Container>
   );
