@@ -1,24 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 import CardContainer from "../CardContainer/CardContainer";
-import { ICardRowProps } from "../../types/interfaces";
+import { ICardProps, ICardRowProps } from "../../types/interfaces";
 
 const CardRow = ({
   color,
-  cards,
+  aces,
   rowNum,
   speedBump,
+  topCard,
 }: ICardRowProps): React.JSX.Element => {
   return (
     <Container color={color}>
       {/* Map out the Aces */}
-      {cards.map((card, i) => {
-        return <CardContainer key={i} card={card} rowNum={rowNum} />;
+      {aces.map((ace, i) => {
+        if (topCard.suit === ace.suit) {
+          ace.row += 1;
+        }
+        return <CardContainer key={i} card={ace} rowNum={rowNum} />;
       })}
 
       {/* Last Column Cards */}
       {/* Deck */}
-      {rowNum === 0 && <CardContainer color="white" rowNum={rowNum} />}
+      {rowNum === 0 && (
+        <CardContainer color="white" card={topCard} rowNum={rowNum} />
+      )}
       {/* Row One */}
       {rowNum === 1 && (
         <CardContainer color="white" card={speedBump[1]} rowNum={rowNum} />

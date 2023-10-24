@@ -11,7 +11,7 @@ interface IBlockColorProps {
 
 interface ICardRowProps {
   color: string;
-  cards: ICardProps[];
+  aces: ICardProps[];
   rowNum: number;
   speedBump: {
     1: ICardProps;
@@ -20,6 +20,7 @@ interface ICardRowProps {
     4: ICardProps;
     5: ICardProps;
   };
+  topCard: ICardProps;
 }
 
 interface ICardContainerProps {

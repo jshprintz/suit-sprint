@@ -55,7 +55,7 @@ const Card = styled.div<{ color: string }>`
   height: 80%;
   width: 50%;
 
-  color: ${(p) => p.color};
+  color: ${(p) => (p.color)};
   font-size: 2rem;
 
   background-color: white;
